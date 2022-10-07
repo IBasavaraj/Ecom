@@ -24,14 +24,11 @@ function Cart() {
         item.itemQuantity--;
         if (parseInt(item.itemQuantity) === 0) {
             const index = cartItems.findIndex((item) => item.itemId === itemId);
-            console.log(cartItems);
             cartItems.splice(index, 1);
             setCartItems([...cartItems])
         } else {
             setCartItem(item)
-            console.log("cartItem", cartItem);
             setCartItem({ ...cartItem })
-            console.log(cartItem);
         }
 
     }
@@ -45,10 +42,6 @@ function Cart() {
         cartItems.map((item) => totalAmount += parseInt(item.itemPrice) * parseInt(item.itemQuantity))
         return totalAmount
     }
-    useEffect(() => {
-        console.log(cartItems);
-    }, [cartItems])
-
     return (
         <div>
             {cartItems?.map((item) => <div key={item.itemId}>
