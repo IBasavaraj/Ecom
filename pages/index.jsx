@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import styles from "./styles/Home.module.scss"
 import { useContext, useState } from 'react';
 import ItemCard from '../Components/ItemCard';
 import { itemData } from '../Constants/productList';
@@ -19,12 +19,13 @@ export default function Home() {
     route.push("/cart");
   }
   return (
-    <div>
-      <button onClick={routeToCart}>cart</button>
+    <div className={styles.homeContainer}>
+      <button className={`${styles.cartButton} ${"button"}`} onClick={routeToCart}>cart</button>
+      <div className={styles.itemsContainer}>
       {itemData.map((item) => (
-          <ItemCard key={item.itemId} item={item} currentComponent="home" cartItem={cartItem} setCartItem={setCartItem} addToCart={addToCart} />
-      )
+          <ItemCard key={item.itemId} item={item} currentComponent="home" cartItem={cartItem} setCartItem={setCartItem} addToCart={addToCart} />)
       )}
+      </div>    
     </div>
   )
 }

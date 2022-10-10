@@ -1,20 +1,17 @@
-import Link from "next/link";
+import styles from "../pages/styles/ItemCard.module.scss";
 import UpdateProductCount from "./UpdateProductCount";
 
 function ItemCard({ item, currentComponent, cartItem, setCartItem, addToCart }) {
     const { itemId, itemName, itemPrice, isCartItem } = item;
     
-    return (<div key={itemId}>
-        <h5>{itemName}</h5>
-        <h1>${itemPrice}</h1>
-        {/* {currentComponent == "home" && <Link href={{
-                pathname: "./Cart",
-                query: item,
-            }}>
-                <a>Add to cart</a>
-            </Link>} */}
-        {currentComponent == "home" && isCartItem ? <UpdateProductCount item={item} 
-        cartItem={cartItem} setCartItem={setCartItem} /> : <button onClick={()=>addToCart(item)}>Add to cart</button>}
+    return (
+    <div className={styles.container} key={itemId}>
+        <h2>{itemName}</h2>
+        <h3>${itemPrice}</h3>
+        {currentComponent == "home" ? isCartItem ? <UpdateProductCount item={item} 
+        cartItem={cartItem} setCartItem={setCartItem} /> : 
+        <button className={`${styles.addToCartButton} button`} onClick={()=>addToCart(item)}>Add to cart</button>:<UpdateProductCount item={item} 
+        cartItem={cartItem} setCartItem={setCartItem} />}
     </div>
     )
 }

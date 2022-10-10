@@ -1,9 +1,9 @@
+import styles from "../pages/styles/Summary.module.scss";
 function Summary({  item }) {
     const { itemId, itemName, itemPrice, itemQuantity} = item;
-    return (<div key={itemId}>
-        <h4>{itemName}</h4>
-        <h4>{itemPrice}</h4>
-        <h4>{itemQuantity}</h4>
+    return (<div className={styles.summaryItem} key={itemId}>
+        <h4 className={styles.itemName}>{itemName} </h4>
+        <h4>{itemPrice} * {itemQuantity} = {itemPrice * itemQuantity}</h4>
         </div>)
 }
 export default Summary;

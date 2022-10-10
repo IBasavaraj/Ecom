@@ -1,3 +1,4 @@
+import styles from "../pages/styles/UpdateProductCount.module.scss"
 import { useContext } from "react";
 import { AppContext } from "../Context/AppContext";
 
@@ -22,10 +23,10 @@ function UpdateProductCount({ item, cartItem, setCartItem }) {
         setCartItem({ ...cartItem })
     }
     return (
-        <div key={itemId}>
-            <button onClick={() => productDecrement(itemId)}>-</button>
-            <h4>{itemQuantity}</h4>
-            <button onClick={() => productIncrement(itemId)}>+</button>
+        <div className={styles.container} key={itemId}>
+            <button className={`${styles.productUpdateCountButton} button`} onClick={() => productDecrement(itemId)}>-</button>
+            <h4 className={styles.itemQuantity}>{itemQuantity}</h4>
+            <button className={`${styles.productUpdateCountButton} button`} onClick={() => productIncrement(itemId)}>+</button>
         </div>)
 }
 export default UpdateProductCount;

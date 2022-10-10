@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    justify-content: center;
+    align-items: center;
+    height: 1rem;
+    margin-bottom: .5rem;
+}
+.productUpdateCountButton {
+    background-color: aqua;
+    border: .1rem solid black;
+    color: black;
+    padding: .1rem .3rem;
+}
+.itemQuantity {
+    margin-bottom: 1rem;
+    padding: .1rem .3rem;
+    font-size: large;
+}

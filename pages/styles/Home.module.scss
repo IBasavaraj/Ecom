@@ -1,0 +1,18 @@
+.homeContainer {
+  margin: 1rem;
+}
+
+.itemsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cartButton {
+  position: relative;
+  left: 93%;
+  background-color: blue;
+  padding: .3rem .6rem;
+  margin-bottom: 2rem;
+}
