@@ -6,13 +6,17 @@ import { AppContext } from '../Context/AppContext';
 import { useRouter } from 'next/router';
 
 export default function Home() {
-  const [cartItems] = useContext(AppContext);
+  // const [cartItems] = useContext(AppContext);
+  const [cartItems, setCartItems] = useState([]);
   const [cartItem, setCartItem] = useState({});
   const route = useRouter();
   function addToCart(item) {
     setCartItem(item);
     cartItems.push(item);
     item.isCartItem = true;
+    localStorage.setItem("cartItems", JSON.stringify(cartItems))
+    // JSON.parse(localStorage.getItem("cartItems"));
+    console.log(cartItems);
     setCartItem({ ...cartItem });
   }
   function routeToCart(){

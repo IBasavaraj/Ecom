@@ -1,14 +1,25 @@
 import styles from "./styles/Cart.module.scss";
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import ItemCard from '../Components/ItemCard';
 import Summary from '../Components/Summary';
 import { AppContext } from "../Context/AppContext"
+import {itemData} from "../Constants/productList"
 
 function Cart() {
-    const [cartItems] = useContext(AppContext);
+    // const [cartItems] = useContext(AppContext);
+    const [cartItems, setCartItems] = useState([]);
     const [cartItem, setCartItem] = useState({});
-    console.log(cartItems);
+    useEffect(()=>{
+        const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+        setCartItems(cartItems)
+    },[])
+
+    // const items = JSON.parse(localStorage.getItem("cartItems"));
+    // setCartItems(JSON.parse(items));
+    // console.log(localStorage);
+
+    // console.log(items);
     function totalAmount() {
         let totalAmount = 0;
         cartItems.map((item) => totalAmount += parseInt(item.itemPrice) * parseInt(item.itemQuantity))

@@ -3,11 +3,11 @@ import { AppContext } from "../Context/AppContext"
 import { useState } from 'react'
 
 function MyApp({ Component, pageProps }) {
-  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
   return (
-    <AppContext.Provider value={[cartItems, setCartItems]}>
+    // <AppContext.Provider value={[cartItems, setCartItems]}>
       <Component {...pageProps} />
-    </AppContext.Provider>
+    // </AppContext.Provider>
   )
 }
 
