@@ -1,5 +1,27 @@
 .summaryItem {
     display: flex;
     flex-direction: row;
+    width: 100%;
     gap: 1rem;
+}
+.itemName {
+    width: 50%;
+}
+.itemPrice {
+    width: 50%;
+}
+.container {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.summaryContainer {
+    width: 40%;
+}
+
+.checkOutButton {
+    background-color: orange;
+    padding: .5rem;
+    font-weight: bold;
 }

@@ -3,6 +3,7 @@
     width: 100%;
     gap: 2rem;
 }
+
 .cartItems {
     display: flex;
     flex-wrap: wrap;
@@ -10,11 +11,21 @@
     width: 60%;
     margin: 1rem;
 }
+
 .summaryContainer {
     width: 40%;
 }
+
 .checkOutButton {
     background-color: orange;
     padding: .5rem;
     font-weight: bold;
+}
+
+.homeButton {
+    position: relative;
+    left: 85%;
+    background-color: blue;
+    padding: .3rem .6rem;
+    margin: 1rem 2rem;
 }

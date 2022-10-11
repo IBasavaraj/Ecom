@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_app.js", "pages/index.jsx", "pages/cart.jsx", "Components/UpdateProductCount.jsx", "Components/Summary.jsx", "Components/ItemCard.jsx"  ],
+, "pages/_app.js", "pages/index.jsx", "pages/cart.jsx", "Components/UpdateProductCount.jsx", "Components/ItemNameAndPrice.jsx", "Components/ItemCard.jsx"  ],
   "exclude": [
     "node_modules"
   ]
